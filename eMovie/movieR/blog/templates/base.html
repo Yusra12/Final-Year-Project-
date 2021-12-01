@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags  .card{
+        cursor: pointer;
+      }
+      .card-body{
+          background:seagreen;
+          height:200px;
+          text-align: center;
+          font-size: 1.5rem;
+          color:white;
+          font-weight: 700;
+      }-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>movie recommendation</title>
+    <style>
+       
+      .card {
+  width: 16rem;
+  height: 16rem;
+  margin: 2em;
+  background: #aaa;
+  background-size: cover;
+  background-position: center;
+  border-radius: .15em;
+  box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.7);
+  position: relative;
+  color: #fff;
+  padding: 0em 3em 1.5em 3em;
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+          justify-content: start;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+
+.card__content {
+
+  position: relative;
+  font-size: 1rem;
+  z-index: 5;
+  -webkit-transition: all 0.3s 0.2s ease-in-out;
+  transition: all 0.3s 0.2s ease-in-out;
+}
+.card__content span,
+.card__content button {
+  font-family: 'Sucrose Bold Two';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sucrose.woff2") format("woff2");
+font-size: 28px;
+}
+
+.card__title {
+  font-size: 3em;
+
+}
+
+
+.card__number {
+  position: absolute;
+  top: -.09em;
+  right: .154em;
+  font-size: 6.13em;
+  font-weight: bold;
+  z-index: 7;
+  opacity: 0;
+  -webkit-transform: translateY(0.24em);
+          transform: translateY(0.24em);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+      .checked {
+    color: orange;
+    }
+    .movie_detail{
+      position:relative;
+      width:100%;
+      height:500px;
+      background-color:gray;
+    }
+    .movie_coll{
+      position: absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%,-50%);
+      background-color:aqua;
+      height: 400px;
+      width: 700px;;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    .searchForm{
+      position: relative;
+    }
+    .moviePopup{
+      padding:0px;
+      position:absolute;
+      top:10px;
+      right:100px;
+      z-index:3;
+      margin-top:35px;
+      height:auto;
+      width:200px;
+      background-color:rgba(255,255,255,0.8);
+    }
+    .moviePopup li{
+     list-style:none;
+      padding:5px;
+      border-bottom:2px solid black;
+      color:black;
+     cursor:pointer;
+    }
+    .moviePopup li:last-child {
+    border:none;
+    }
+    .moviePopup li:hover{
+      padding:2px;
+      color:rgb(143, 132, 131);
+    }
+    </style>
+  
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href="/">eMovie</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+   <div class='container'>
+
+    {%block content %}
+
+    {% endblock %}
+   </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
